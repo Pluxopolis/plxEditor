@@ -1,2 +1,2 @@
 # plxEditor
-Barre d'outils wysiwyget pour PluXml
+Barre d'outils wysiwyg pour PluXml
