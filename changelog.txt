@@ -1,0 +1,22 @@
+## Version 1.5 (25/05/2016) ##
+[+] Compatibilité PluXml 5.5 (nouvelle gestion du gestionnaire de médias)
+
+## Version 1.4.1 (18/11/2015) ##
+[+] Amélioration de l'affichage des fenêtres à partir des icônes de sélection des couleurs/smilies/lien
+[+] Pas d'affichage de l'éditeur sur l'écran d'édition des fichiers du thème et de la gestion des commentaires
+BUG Mauvais affichage en plein écran (superposition avec la barre d'action)
+BUG sous IE11: Impossible d’obtenir la propriété « createRange » d’une référence null ou non définie
+
+## Version 1.4 (12/11/2015) ##
+[+] Ajout compteur de mots
+[+] Editeur et barre d'outils responsive
+[+] Amélioration de l'affichage en plein écran
+[+] Zone d'édition redimensionnable (non supportée avec IE http://www.w3schools.com/cssref/css3_pr_resize.asp )
+[-] Suppression du codage en dur du chemin des plugins, remplacé par PLX_PLUGINS
+BUG Chevauchement de l'éditeur avec la sidebar de droite sur la page de rédaction des articles
+
+## Version 1.3 (13/07/2015) ##
+[+] Compatibilité PluXml 5.4
+
+## Version 1.2 (20/10/2011) ##
+[+] Bouton pour ajouter des smilies

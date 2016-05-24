@@ -1,0 +1,18 @@
+.tag {
+	color:#000099;
+	margin:0;
+	display:block;
+}
+blockquote {
+	margin:0 0 0 15px;
+}
+b {
+	font-weight:bold;
+}
+.literal {
+	color:#0000FF;
+}
+.comment {
+	color:#CCCCCC;
+	display:block;
+}
