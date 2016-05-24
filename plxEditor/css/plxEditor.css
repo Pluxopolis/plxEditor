@@ -5,7 +5,6 @@
 	border: 1px solid #bbb;
 	min-height: 300px;
 }
-
 .plxeditor-toolbar {
 	clear:both;
 	float:left;
@@ -13,7 +12,6 @@
 	padding:0 !important;
 	width:100%;
 }
-
 .plxeditor-footer {
 	text-align: right;
 	font-size: 0.9rem;
@@ -21,15 +19,13 @@
 	padding-right: 10px;
 }
 .wysiwyg-fullscreen .plxeditor-footer {
-    padding-left: 7px;
+	padding-left: 7px;
 	border-bottom: 1px solid #efefef;
 }
-
 .plxeditor .resizable {
 	resize: vertical;   /* Options: horizontal, vertical, both */
 	overflow: auto; /* fix for Safari */
 }
-
 table#popup {
 	font-size: 0.8rem;
 }
@@ -63,7 +59,7 @@ table#popup td {
 	bottom: 0;
 	height: 100%;
 	width: 100%;
-	z-index: -1;	
+	z-index: -1;
 	min-height: 100%;
 	overflow: hidden;
 	padding: 60px 10px;
@@ -74,7 +70,6 @@ table#popup td {
 		padding: 100px 10px;
 	}
 }
-
 img {
 	border:none;
 }
@@ -116,119 +111,118 @@ img {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
 .icon-adjust:before {
-    content: "\f042";
+	content: "\f042";
 }
 .icon-tint:before {
-    content: "\f043";
+	content: "\f043";
 }
 .icon-expand:before {
-    content: "\f065";
+	content: "\f065";
 }
 .icon-compress:before {
-    content: "\f066";
+	content: "\f066";
 }
 .icon-chain-broken:before {
-    content: "\f127";
+	content: "\f127";
 }
 .icon-unlink:before {
-    content: "\f127";
+	content: "\f127";
 }
 .icon-youtube:before {
-    content: "\f167";
+	content: "\f167";
 }
 .icon-long-arrow-right:before {
-    content: "\f178";
+	content: "\f178";
 }
 .icon-soundcloud:before {
-    content: "\f1be";
+	content: "\f1be";
 }
 .icon-mouse-pointer:before {
-    content: "\f245";
+	content: "\f245";
 }
 .icon-image:before {
-    content: "\e900";
+	content: "\e900";
 }
 .icon-images:before {
-    content: "\e901";
+	content: "\e901";
 }
 .icon-camera:before {
-    content: "\e902";
+	content: "\e902";
 }
 .icon-headphones:before {
-    content: "\e903";
+	content: "\e903";
 }
 .icon-film:before {
-    content: "\e904";
+	content: "\e904";
 }
 .icon-quotes-right:before {
-    content: "\e905";
+	content: "\e905";
 }
 .icon-list-numbered:before {
-    content: "\e91b";
+	content: "\e91b";
 }
 .icon-list2:before {
-    content: "\e91c";
+	content: "\e91c";
 }
 .icon-link:before {
-    content: "\e906";
+	content: "\e906";
 }
 .icon-happy:before {
-    content: "\e91d";
+	content: "\e91d";
 }
 .icon-font-size:before {
-    content: "\e907";
+	content: "\e907";
 }
 .icon-bold:before {
-    content: "\e908";
+	content: "\e908";
 }
 .icon-underline:before {
-    content: "\e909";
+	content: "\e909";
 }
 .icon-italic:before {
-    content: "\e90a";
+	content: "\e90a";
 }
 .icon-strikethrough:before {
-    content: "\e90b";
+	content: "\e90b";
 }
 .icon-superscript:before {
-    content: "\e90c";
+	content: "\e90c";
 }
 .icon-subscript:before {
-    content: "\e90d";
+	content: "\e90d";
 }
 .icon-pagebreak:before {
-    content: "\e90e";
+	content: "\e90e";
 }
 .icon-clear-formatting:before {
-    content: "\e90f";
+	content: "\e90f";
 }
 .icon-pilcrow:before {
-    content: "\e910";
+	content: "\e910";
 }
 .icon-paragraph-left:before {
-    content: "\e911";
+	content: "\e911";
 }
 .icon-paragraph-center:before {
-    content: "\e912";
+	content: "\e912";
 }
 .icon-paragraph-right:before {
-    content: "\e913";
+	content: "\e913";
 }
 .icon-paragraph-justify:before {
-    content: "\e914";
+	content: "\e914";
 }
 .icon-indent-increase:before {
-    content: "\e915";
+	content: "\e915";
 }
 .icon-indent-decrease:before {
-    content: "\e916";
+	content: "\e916";
 }
 .icon-embed:before {
-    content: "\e917";
+	content: "\e917";
 }
 .icon-embed2:before {
-    content: "\e918";
+	content: "\e918";
 }
 

@@ -21,13 +21,13 @@ PLXEDITOR.editor=function() {
 		}
 		this.editor = editorName;
 		this.textareaId = textareaId;
-		// Chargement des données avec conversion des liens
+		// Chargement des donnÃ©es avec conversion des liens
 		this.textareaValue = this.convertLinks(E$(this.textareaId).value, 0);
 		//
 		this.viewSource = false;
 		this.viewFullscreen = false;
 		// browser detection
-		this.IE = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0; 
+		this.IE = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0;
 		// EDITOR
 		var editor = document.createElement("div");
 		editor.id = this.textareaId+"-wysiwyg";
@@ -164,7 +164,7 @@ PLXEDITOR.editor=function() {
 				sel.removeAllRanges();
 				sel.addRange(range);
 		}
-		
+
 	},
 	create.prototype.execCommand=function(cmd, value) {
 		this.frame.focus();
@@ -213,16 +213,16 @@ PLXEDITOR.editor=function() {
 	create.prototype.toggleFullscreen = function() {
 		if (!this.viewFullscreen) {
 			E$(this.textareaId+'-wysiwyg').setAttribute('class', 'wysiwyg-fullscreen');
-			E$(this.textareaId+'-fullscreen').setAttribute('class', 'icon-compress');			
+			E$(this.textareaId+'-fullscreen').setAttribute('class', 'icon-compress');
 			this.viewFullscreen = true;
 			E$("form_article").style.height = "0";
 		} else {
 			E$(this.textareaId+'-wysiwyg').setAttribute('class', 'wysiwyg');
-			E$(this.textareaId+'-fullscreen').setAttribute('class', 'icon-expand');			
+			E$(this.textareaId+'-fullscreen').setAttribute('class', 'icon-expand');
 			this.viewFullscreen = false;
 			E$("form_article").style.height = "100%";
 		}
-		
+
 		this.frame.focus();
 	},
 	create.prototype.getViewportHeight=function() {

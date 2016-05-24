@@ -107,7 +107,7 @@ class plxEditor extends plxPlugin {
 		$langfile = $this->plugPath.'plxEditor/lang/'.$this->default_lang.'.js';
 		if(is_file($langfile))
 		echo '<script src="'.$langfile.'"></script>'."\n";
-		echo '<?php $medias = $plxAdmin->aConf["medias"].($plxAdmin->aConf["userfolders"] ? $_SESSION["user"]."/" : ""); ?>'; 
+		echo '<?php $medias = $plxAdmin->aConf["medias"].($plxAdmin->aConf["userfolders"] ? $_SESSION["user"]."/" : ""); ?>';
 		echo '
 		<script>
 			PLXEDITOR_PATH_MEDIAS = "<?php echo $medias ?>";
