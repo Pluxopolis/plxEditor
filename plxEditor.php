@@ -21,7 +21,7 @@ class plxEditor extends plxPlugin {
 
 		# droits pour accèder à la page config.php du plugin
 		$this->setConfigProfil(PROFIL_ADMIN);
-
+		
 		$this->plugPath = PLX_PLUGINS.__CLASS__.'/';
 
 		# Déclarations des hooks
@@ -93,8 +93,8 @@ class plxEditor extends plxPlugin {
 	 * @author	Stephane F
 	 **/
 	public function AdminTopEndHead() {
-		echo '<link rel="stylesheet" type="text/css" href="'.$this->plugPath.'plxEditor/css/plxEditor.css" media="screen" />'."\n";
-		echo '<script src="'.PLX_PLUGINS.'plxEditor/plxEditor/plxEditor.js"></script>'."\n";
+		echo '<link type="text/css" rel="stylesheet" href="'.$this->plugPath.'plxEditor/css/plxEditor.css" />'."\n";
+		echo '<script type="text/javascript" src="'.$this->plugPath.'plxEditor/plxEditor.js"></script>'."\n";
 	}
 
 	/**
@@ -103,19 +103,17 @@ class plxEditor extends plxPlugin {
 	 * @return	stdio
 	 * @author	Stephane F
 	 **/
-	public function AdminFootEndBody() {
-		$langfile = $this->plugPath.'plxEditor/lang/'.$this->default_lang.'.js';
-		if(is_file($langfile))
-		echo '<script src="'.$langfile.'"></script>'."\n";
-		echo '<?php $medias = $plxAdmin->aConf["medias"].($plxAdmin->aConf["userfolders"] ? $_SESSION["user"]."/" : ""); ?>';
-		echo '
-		<script>
-			PLXEDITOR_PATH_MEDIAS = "<?php echo $medias ?>";
-			PLXEDITOR_PATH_PLUGINS = "<?php echo PLX_PLUGINS ?>";
-			if(document.getElementById("id_chapo")) { editor_chapo = new PLXEDITOR.editor.create("editor_chapo", "id_chapo"); }
-			if(document.getElementById("id_content")) { editor_content = new PLXEDITOR.editor.create("editor_content", "id_content"); }
-		</script>
-		';
+	public function AdminFootEndBody() {?>
+
+<script type="text/javascript">
+<!--
+var options = null;
+var ed_chapo = new PLXEDITOR.editor.create('id_chapo', options);
+var ed_content = new PLXEDITOR.editor.create('id_content', options);
+-->
+</script>
+
+	<?php
 	}
 }
 ?>
