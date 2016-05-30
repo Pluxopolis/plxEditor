@@ -294,6 +294,7 @@ PLXEDITOR.editor=function() {
 		v=v.replace(/s*class="webkit-indent-blockquote"/gi,'');
 		v=v.replace(/<span style="">/gi,'');
 		v=v.replace(/s*style="font-size: (.*?);"/gi,'');
+    v=v.replace(/<span\b[^>]*>(.*?)<\/span[^>]*>/gi,'$1');
 		v=v.replace(/<b\b[^>]*>(.*?)<\/b[^>]*>/gi,'<strong>$1</strong>');
 		v=v.replace(/<i\b[^>]*>(.*?)<\/i[^>]*>/gi,'<em>$1</em>');
 		v=v.replace(/<(s|strike)\b[^>]*>(.*?)<\/(s|strike)[^>]*>/gi,'<span style="text-decoration: line-through;">$2</span>');
