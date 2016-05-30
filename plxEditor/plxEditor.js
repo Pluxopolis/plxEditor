@@ -315,7 +315,11 @@ PLXEDITOR.editor=function() {
 	},
 	create.prototype.formatHTML=function(html) {
 		//strip white space
-		html = html.replace(/\s/g, ' ');
+		html = html.replace(/ /g, ' ');
+		//strip tab
+		html = html.replace(/\t/g, ' ');
+		//strip carriage return
+		html = html.replace(/\r/g, ' ');
 		//convert html to text
 		html = html.replace(/&/g, '&amp;');
 		html = html.replace(/</g, '&lt;');
