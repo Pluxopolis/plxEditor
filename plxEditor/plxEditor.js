@@ -206,7 +206,7 @@ PLXEDITOR.editor=function() {
 		html += '<html><head>';
 		html += '<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">';
 		html += '<style type="text/css">pre { background-color: #fff; padding: 0.75em 1.5em; border: 1px solid #dddddd;* }</style>';
-		html += '<style type="text/css">html,body { font-size: 93.7%; font-family: helvetica, arial, sans-serif; cursor: text; } body { margin: 0.5em; padding: 0; } img { border:none; }</style>';
+		html += '<style type="text/css">html,body { font-size: 93.7%; font-family: helvetica, arial, sans-serif; cursor: text; } body { margin: 0.5em; padding: 0; } img { border:none; max-width: 100%; }</style>';
 		html += '</head><body></body></html>';
 		return html;
 	},
