@@ -333,7 +333,7 @@ PLXEDITOR.editor=function() {
 		//search for comments
 		html = html.replace(/&lt;!--(.*?)--&gt;/gi, "<span class=\"comment\">&lt;!--$1--&gt;</span>");
 		//search for html entities
-		html = html.replace(/&amp;(.*?);/g, '<b>&amp;$1;</b>');
+		html = html.replace(/&amp;(.*?);/gi, "<span class=\"entities\">&amp;$1;</span>");
 		return html;
 	};
 	return{create:create}
