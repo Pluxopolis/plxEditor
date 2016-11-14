@@ -24,8 +24,11 @@ class plxEditor extends plxPlugin {
 
 		$this->plugPath = PLX_PLUGINS.__CLASS__.'/';
 
+		# déclaration pour ajouter l'éditeur
+		$static = $this->getParam('static')==1 ? '' : '|statique';
+
 		# Déclarations des hooks
-		if(!preg_match('/(parametres_edittpl|comment)/', basename($_SERVER['SCRIPT_NAME']))) {
+		if(!preg_match('/(parametres_edittpl|comment'.$static.')/', basename($_SERVER['SCRIPT_NAME']))) {
 			$this->addHook('AdminTopEndHead', 'AdminTopEndHead');
 			$this->addHook('AdminFootEndBody', 'AdminFootEndBody');
 			$this->addHook('AdminArticlePrepend', 'AdminArticlePrepend'); # conversion des liens pour le preview d'un article
