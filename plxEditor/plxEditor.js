@@ -206,7 +206,7 @@ PLXEDITOR.editor=function() {
 		html += '<html><head>';
 		html += '<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">';
 		html += '<style type="text/css">pre { background-color: #fff; padding: 0.75em 1.5em; border: 1px solid #dddddd;* }</style>';
-		html += '<style type="text/css">html,body { font-size: 93.7%; font-family: helvetica, arial, sans-serif; cursor: text; } body { margin: 0.5em; padding: 0; } img { border:none; }</style>';
+		html += '<style type="text/css">html,body { font-family: helvetica, arial, sans-serif; cursor: text; } body { margin: 0.5em; padding: 0; } img { border:none; max-width: 100%; } a { color: #258fd6; text-decoration:none; }</style>';
 		html += '</head><body></body></html>';
 		return html;
 	},
@@ -293,6 +293,8 @@ PLXEDITOR.editor=function() {
 		v=v.replace(/s*class="apple-style-span"/gi,'');
 		v=v.replace(/s*class="webkit-indent-blockquote"/gi,'');
 		v=v.replace(/<span style="">/gi,'');
+		v=v.replace(/s*style="font-size: (.*?);"/gi,'');
+    v=v.replace(/<span\b[^>]*>(.*?)<\/span[^>]*>/gi,'$1');
 		v=v.replace(/<b\b[^>]*>(.*?)<\/b[^>]*>/gi,'<strong>$1</strong>');
 		v=v.replace(/<i\b[^>]*>(.*?)<\/i[^>]*>/gi,'<em>$1</em>');
 		v=v.replace(/<(s|strike)\b[^>]*>(.*?)<\/(s|strike)[^>]*>/gi,'<span style="text-decoration: line-through;">$2</span>');
@@ -305,15 +307,21 @@ PLXEDITOR.editor=function() {
 		v=v.replace(/<span style="font-style: italic;?">(.*?)<\/span>/gi,'<em>$1</em>');
 		v=v.replace(/<span style="font-weight: bold;?">(.*?)<\/span>|<b\b[^>]*>(.*?)<\/b[^>]*>/gi,'<strong>$1</strong>')
 		v=v.replace(/BACKGROUND-COLOR/gi,'background-color');
-		//v=v.replace(/<div><br \/><\/div>/gi, '<p></p>');
 		v=v.replace(/<(IMG|INPUT|BR|HR|LINK|META)([^>]*)>/gi,"<$1$2 />") //self-close tags
 		v=v.replace(/(<\/?[A-Z]*)/g,lc) // lowercase tags
 		v=v.replace(/STYLE="[^"]*"/gi,sa); //lc style atts
+		v=v.replace(/<br\b[^>]*>/gi,'<br />'); // clean line-break options
+		v=v.replace(/<div\b[^>]*><br \/><\/div[^>]*>/gi, '<br />'); // clean line break enclosed in div
+		v=v.replace(/<div\b[^>]*><strong><br \/><\/strong><\/div[^>]*>/gi, '<br />'); // clean line break exeption
 		return v;
 	},
 	create.prototype.formatHTML=function(html) {
 		//strip white space
-		html = html.replace(/\s/g, ' ');
+		html = html.replace(/ /g, ' ');
+		//strip tab
+		html = html.replace(/\t/g, ' ');
+		//strip carriage return
+		html = html.replace(/\r/g, ' ');
 		//convert html to text
 		html = html.replace(/&/g, '&amp;');
 		html = html.replace(/</g, '&lt;');
@@ -332,7 +340,7 @@ PLXEDITOR.editor=function() {
 		//search for comments
 		html = html.replace(/&lt;!--(.*?)--&gt;/gi, "<span class=\"comment\">&lt;!--$1--&gt;</span>");
 		//search for html entities
-		html = html.replace(/&amp;(.*?);/g, '<b>&amp;$1;</b>');
+		html = html.replace(/&amp;(.*?);/gi, "<span class=\"entities\">&amp;$1;</span>");
 		return html;
 	};
 	return{create:create}

@@ -97,6 +97,7 @@ class plxEditor extends plxPlugin {
 	 **/
 	public function AdminTopEndHead() {
 		echo '<link rel="stylesheet" type="text/css" href="'.$this->plugPath.'plxEditor/css/plxEditor.css" media="screen" />'."\n";
+		echo '<link rel="stylesheet" type="text/css" href="'.$this->plugPath.'plxEditor/css/viewsource.css" media="screen" />'."\n";
 		echo '<script src="'.PLX_PLUGINS.'plxEditor/plxEditor/plxEditor.js"></script>'."\n";
 	}
 

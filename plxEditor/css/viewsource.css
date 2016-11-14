@@ -1,7 +1,11 @@
 .tag {
-	color:#000099;
+	color:#990099;
 	margin:0;
 	display:block;
+}
+.entities {
+	color:#00CCCC;
+  font-style: italic;
 }
 blockquote {
 	margin:0 0 0 15px;
