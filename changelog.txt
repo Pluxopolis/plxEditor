@@ -1,5 +1,6 @@
 ## Version 1.5.1 (14/11/2016) ##
 [+] Configuration de l'utilisation de plxEditor avec les pages statiques
+[+] Traduction anglaise + diverses améliorations (contribution Deevad)
 
 ## Version 1.5 (25/05/2016) ##
 [+] Compatibilité PluXml 5.5 (nouvelle gestion du gestionnaire de médias)
