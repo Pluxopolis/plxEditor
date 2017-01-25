@@ -1,3 +1,7 @@
+## Version 1.5.2 (25/01/2017) ##
+[+] Bouton Citation
+[+] Bouton Youtube
+
 ## Version 1.5.1 (14/11/2016) ##
 [+] Configuration de l'utilisation de plxEditor avec les pages statiques
 [+] Traduction anglaise + diverses améliorations (contribution Deevad)
