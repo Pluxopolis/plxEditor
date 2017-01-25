@@ -27,5 +27,7 @@ lang={
 'L_TOOLBAR_SUPERSCRIPT'				: 'Exposant',
 'L_TOOLBAR_SUBSCRIPT'				: 'Indice',
 'L_TOOLBAR_QUOTE'			      : 'Citation',
+'L_TOOLBAR_YOUTUBE'					: 'Youtube',
+'L_TOOLBAR_YOUTUBELINK'				: 'Lien de la vidéo Youtube', 
 'L_WORDS'							: 'Mots',
 };

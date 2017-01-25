@@ -98,6 +98,7 @@ PLXEDITOR.editor=function() {
 	<span class="icon-paragraph-right" onclick="'+this.editor+'.execCommand(\'justifyright\')" title="'+lang.L_TOOLBAR_P_RIGHT+'"></span>\
 	<span class="icon-paragraph-justify" onclick="'+this.editor+'.execCommand(\'justifyFull\')" title="'+lang.L_TOOLBAR_P_JUSTIFY+'"></span>\
 	<span class="icon-images" onclick="mediasManager.openPopup(\''+this.editor+'\', false, \'PLXEDITOR_fallback\')" title="'+lang.L_TOOLBAR_MEDIAS+'"></span>\
+	<span class="icon-youtube" onclick="'+this.editor+'.execCommand(\'youtube\')" title="'+lang.L_TOOLBAR_YOUTUBE+'"></span>\
 	<span id="'+this.textareaId+'-smilies" class="icon-happy" onclick="'+this.editor+'.execCommand(\'smilies\')" title="'+lang.L_TOOLBAR_SMILIES+'"></span>\
 	<span id="'+this.textareaId+'-forecolor" class="icon-adjust" onclick="'+this.editor+'.execCommand(\'forecolor\')" title="'+lang.L_TOOLBAR_FORECOLOR+'"></span>\
 	<span id="'+this.textareaId+'-backcolor" class="icon-tint" onclick="'+this.editor+'.execCommand(\'backcolor\')" title="'+lang.L_TOOLBAR_BACKCOLOR+'"></span>\
@@ -184,6 +185,20 @@ PLXEDITOR.editor=function() {
 		} else if (cmd == "inserthtml" && this.IE) { // IE
 			if(this.viewSource==true) return;
 			this.pasteHTML(value);
+		} else if (cmd == "youtube" && !value) {
+			var url = prompt(lang.L_TOOLBAR_YOUTUBELINK, 'http://www.youtube.com/watch?v=');
+			if(url!=null) {
+				param = 'v';
+				param = param.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+				var regexS = "[\\?&]"+param+"=([^&#]*)";
+				var regex = new RegExp(regexS);
+				var result = regex.exec(url);
+				if(result != '?v=,') {
+					var video = result[1];
+					s = '<iframe style="border:0;" width="560" height="315" src="https://www.youtube.com/embed/'+video+'" allowfullscreen></iframe>';
+					this.frame.document.execCommand('inserthtml', false, s);
+				}		
+			}			
 		} else {
 			if(this.viewSource==true) return;
 			this.frame.document.execCommand(cmd, false, value);
