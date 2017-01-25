@@ -26,5 +26,6 @@ lang={
 'L_TOOLBAR_SMILIES'					: 'Emoticon',
 'L_TOOLBAR_SUPERSCRIPT'				: 'Supercript',
 'L_TOOLBAR_SUBSCRIPT'				: 'Subscript',
+'L_TOOLBAR_QUOTE'					  : 'Quote',
 'L_WORDS'							: 'Words',
 };

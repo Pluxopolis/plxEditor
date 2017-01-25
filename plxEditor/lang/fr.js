@@ -26,5 +26,6 @@ lang={
 'L_TOOLBAR_SMILIES'					: 'Emoticônes',
 'L_TOOLBAR_SUPERSCRIPT'				: 'Exposant',
 'L_TOOLBAR_SUBSCRIPT'				: 'Indice',
+'L_TOOLBAR_QUOTE'			      : 'Citation',
 'L_WORDS'							: 'Mots',
 };

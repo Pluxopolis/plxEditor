@@ -1,4 +1,3 @@
-<!--
 /**
  * plxEditor
  *
@@ -91,6 +90,7 @@ PLXEDITOR.editor=function() {
 	<span class="icon-pagebreak" onclick="'+this.editor+'.execCommand(\'inserthtml\', \'<hr />\')" title="'+lang.L_TOOLBAR_HR+'"></span>\
 	<span class="icon-list-numbered" onclick="'+this.editor+'.execCommand(\'insertorderedlist\')" title="'+lang.L_TOOLBAR_OL+'"></span>\
 	<span class="icon-list2" onclick="'+this.editor+'.execCommand(\'insertunorderedlist\')" title="'+lang.L_TOOLBAR_UL+'"></span>\
+	<span class="icon-quotes-right" onclick="'+this.editor+'.execCommand(\'formatBlock\', \'<blockquote>\')" title="'+lang.L_TOOLBAR_QUOTE+'"></span>\
 	<span class="icon-superscript" onclick="'+this.editor+'.execCommand(\'superscript\')" title="'+lang.L_TOOLBAR_SUPERSCRIPT+'"></span>\
 	<span class="icon-subscript" onclick="'+this.editor+'.execCommand(\'subscript\')" title="'+lang.L_TOOLBAR_SUBSCRIPT+'"></span>\
 	<span class="icon-paragraph-left" onclick="'+this.editor+'.execCommand(\'justifyleft\')" title="'+lang.L_TOOLBAR_P_LEFT+'"></span>\
