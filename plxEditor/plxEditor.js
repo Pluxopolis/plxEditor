@@ -186,19 +186,16 @@ PLXEDITOR.editor=function() {
 			if(this.viewSource==true) return;
 			this.pasteHTML(value);
 		} else if (cmd == "youtube" && !value) {
-			var url = prompt(lang.L_TOOLBAR_YOUTUBELINK, 'http://www.youtube.com/watch?v=');
-			if(url!=null) {
-				param = 'v';
-				param = param.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-				var regexS = "[\\?&]"+param+"=([^&#]*)";
-				var regex = new RegExp(regexS);
-				var result = regex.exec(url);
-				if(result != '?v=,') {
-					var video = result[1];
-					s = '<div class="frame"><iframe style="border:0;" width="560" height="315" src="https://www.youtube.com/embed/'+video+'" allowfullscreen></iframe></div>';
+			var url = prompt(lang.L_TOOLBAR_YOUTUBELINK, '');
+			if(url!==null) {
+				var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]{11,11}).*/;
+				var match = url.match(regExp);
+				if (match) if (match.length >= 2) {
+					var videoId = match[2];
+					var s = '<div class="frame"><iframe style="border:0;max-width:516px" src="https://www.youtube.com/embed/'+videoId+'" allowfullscreen></iframe></youtube>';
 					this.frame.document.execCommand('inserthtml', false, s);
-				}		
-			}			
+				}
+			}		
 		} else {
 			if(this.viewSource==true) return;
 			this.frame.document.execCommand(cmd, false, value);
