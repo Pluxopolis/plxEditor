@@ -333,7 +333,7 @@ PLXEDITOR.editor=function() {
 		v=v.replace(/STYLE="[^"]*"/gi,sa); //lc style atts
 		v=v.replace(/<br\b[^>]*>/gi,'<br />'); // clean line-break options
 		v=v.replace(/<div\b[^>]*><br \/><\/div[^>]*>/gi, '<br />'); // clean line break enclosed in div
-		v=v.replace(/<div\b[^>]*><code><br \/><\/code><\/div[^>]*>/gi, ''); // clean line break enclosed in div/code
+		v=v.replace(/<div\b[^>]*><code><br \/><\/code><\/div[^>]*>/gi, '<br />'); // clean line break enclosed in div/code
 		v=v.replace(/<div\b[^>]*><strong><br \/><\/strong><\/div[^>]*>/gi, '<br />'); // clean line break exeption
 		return v;
 	},
