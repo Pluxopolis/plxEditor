@@ -10,8 +10,6 @@ function E$(id){return document.getElementById(id)}
 
 PLXEDITOR.editor=function() {
 
-	var buttons = ['bold', 'italic', 'underline', 'strikethrough', 'separator', 'image', 'forecolor', 'backcolor', 'link', 'unlink', 'removeformat', 'separator', 'justifyleft', 'justifycenter', 'justifyright', 'separator', 'insertorderedlist', 'insertunorderedlist', 'separator', 'outdent', 'indent', 'separator', 'subscript', 'superscript', 'smilies', 'separator', 'html', 'fullscreen'];
-
 	function create(editorName, textareaId){
 		this.path = {
 			editor : PLXEDITOR_PATH_PLUGINS+'plxEditor/',
