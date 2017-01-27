@@ -28,6 +28,7 @@ lang={
 'L_TOOLBAR_SUBSCRIPT'				: 'Indici',
 'L_TOOLBAR_QUOTE'			      : 'Citacion',
 'L_TOOLBAR_YOUTUBE'					: 'Youtube',
-'L_TOOLBAR_YOUTUBELINK'				: 'Ligam de la vidèo Youtube', 
+'L_TOOLBAR_YOUTUBELINK'				: 'Ligam de la vidèo Youtube',
+'L_TOOLBAR_CODE'					: 'Code',
 'L_WORDS'							: 'Paraulas',
 };

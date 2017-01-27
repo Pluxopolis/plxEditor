@@ -29,5 +29,6 @@ lang={
 'L_TOOLBAR_QUOTE'					  : 'Quote',
 'L_TOOLBAR_YOUTUBE'					: 'Youtube',
 'L_TOOLBAR_YOUTUBELINK'				: 'Youtube video link',
+'L_TOOLBAR_CODE'					: 'Code',
 'L_WORDS'							: 'Words',
 };

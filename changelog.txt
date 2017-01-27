@@ -1,6 +1,8 @@
-## Version 1.5.2 (25/01/2017) ##
+## Version 1.5.2 (27/01/2017) ##
 [+] Bouton Citation
 [+] Bouton Youtube
+[+] Bouton Code
+[+] Traduction occitane (contribution Quent-in)
 
 ## Version 1.5.1 (14/11/2016) ##
 [+] Configuration de l'utilisation de plxEditor avec les pages statiques

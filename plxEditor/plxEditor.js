@@ -70,6 +70,7 @@ PLXEDITOR.editor=function() {
 	create.prototype.getEditorHtml=function() {
 
 		var toolbar = '\
+	<div id="'+this.textareaId+'-toolbar-icons" class="show">\
 	<select onchange="'+this.editor+'.execCommand(\'formatblock\', this.value);this.selectedIndex=0;">\
 		<option value="">Style</option>\
 		<option value="<h1>">H1</option>\
@@ -99,9 +100,11 @@ PLXEDITOR.editor=function() {
 	<span class="icon-paragraph-justify" onclick="'+this.editor+'.execCommand(\'justifyFull\')" title="'+lang.L_TOOLBAR_P_JUSTIFY+'"></span>\
 	<span class="icon-images" onclick="mediasManager.openPopup(\''+this.editor+'\', false, \'PLXEDITOR_fallback\')" title="'+lang.L_TOOLBAR_MEDIAS+'"></span>\
 	<span class="icon-youtube" onclick="'+this.editor+'.execCommand(\'youtube\')" title="'+lang.L_TOOLBAR_YOUTUBE+'"></span>\
+	<span class="icon-terminal" onclick="'+this.editor+'.execCommand(\'code\')" title="'+lang.L_TOOLBAR_CODE+'"></span>\
 	<span id="'+this.textareaId+'-smilies" class="icon-happy" onclick="'+this.editor+'.execCommand(\'smilies\')" title="'+lang.L_TOOLBAR_SMILIES+'"></span>\
 	<span id="'+this.textareaId+'-forecolor" class="icon-adjust" onclick="'+this.editor+'.execCommand(\'forecolor\')" title="'+lang.L_TOOLBAR_FORECOLOR+'"></span>\
 	<span id="'+this.textareaId+'-backcolor" class="icon-tint" onclick="'+this.editor+'.execCommand(\'backcolor\')" title="'+lang.L_TOOLBAR_BACKCOLOR+'"></span>\
+	</div>\
 	<span id="'+this.textareaId+'-html" class="icon-embed2" onclick="'+this.editor+'.execCommand(\'html\')" title="'+lang.L_TOOLBAR_HTML+'"></span>\
 	<span id="'+this.textareaId+'-fullscreen" class="icon-expand" onclick="'+this.editor+'.execCommand(\'fullscreen\')" title="'+lang.L_TOOLBAR_FULLSCREEN+'"></span>\
 	';
@@ -169,6 +172,7 @@ PLXEDITOR.editor=function() {
 	},
 	create.prototype.execCommand=function(cmd, value) {
 		this.frame.focus();
+		if(this.viewSource===true && cmd !== "html" && cmd !== "fullscreen") return;
 		if (cmd == "link" && !value) {
 			sel = this.getselection();
 			new PLXEDITOR.linker.create(this.editor, this.textareaId+'-linker', this.trim(sel));
@@ -183,8 +187,10 @@ PLXEDITOR.editor=function() {
 		} else if (cmd == "fullscreen" && !value) {
 			this.toggleFullscreen();
 		} else if (cmd == "inserthtml" && this.IE) { // IE
-			if(this.viewSource==true) return;
 			this.pasteHTML(value);
+		} else if (cmd == "code" && !value) {
+			sel = this.getselection();
+			this.frame.document.execCommand('inserthtml', false, '<code>'+sel+'</code>');
 		} else if (cmd == "youtube" && !value) {
 			var url = prompt(lang.L_TOOLBAR_YOUTUBELINK, '');
 			if(url!==null) {
@@ -197,7 +203,6 @@ PLXEDITOR.editor=function() {
 				}
 			}		
 		} else {
-			if(this.viewSource==true) return;
 			this.frame.document.execCommand(cmd, false, value);
 		}
 		this.frame.focus();
@@ -256,6 +261,8 @@ PLXEDITOR.editor=function() {
 	create.prototype.toggleSource=function() {
 		var html, txt;
 		if (!this.viewSource) {
+			E$(this.textareaId+'-toolbar-icons').setAttribute('class', 'hide');
+			E$(this.textareaId+'-footer').setAttribute('class', 'plxeditor-footer hide');
 			txt = this.frame.document.body.innerHTML;
 			// conversion des liens
 			txt = this.convertLinks(txt, 1);
@@ -276,6 +283,8 @@ PLXEDITOR.editor=function() {
 			this.viewSource = true;
 			E$(this.textareaId+'-footer').innerHTML = "";
 		} else {
+			E$(this.textareaId+'-toolbar-icons').setAttribute('class', 'show');
+			E$(this.textareaId+'-footer').setAttribute('class', 'plxeditor-footer show');
 			if (this.IE) {
 				txt = this.frame.document.body.innerText;
 				// conversion des liens
@@ -324,6 +333,7 @@ PLXEDITOR.editor=function() {
 		v=v.replace(/STYLE="[^"]*"/gi,sa); //lc style atts
 		v=v.replace(/<br\b[^>]*>/gi,'<br />'); // clean line-break options
 		v=v.replace(/<div\b[^>]*><br \/><\/div[^>]*>/gi, '<br />'); // clean line break enclosed in div
+		v=v.replace(/<div\b[^>]*><code><br \/><\/code><\/div[^>]*>/gi, ''); // clean line break enclosed in div/code
 		v=v.replace(/<div\b[^>]*><strong><br \/><\/strong><\/div[^>]*>/gi, '<br />'); // clean line break exeption
 		return v;
 	},
