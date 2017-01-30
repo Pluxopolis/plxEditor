@@ -32,10 +32,10 @@ class plxEditor extends plxPlugin {
 			$this->addHook('AdminTopEndHead', 'AdminTopEndHead');
 			$this->addHook('AdminFootEndBody', 'AdminFootEndBody');
 			$this->addHook('AdminArticlePrepend', 'AdminArticlePrepend'); # conversion des liens pour le preview d'un article
-
 			$this->addHook('plxAdminEditArticle', 'plxAdminEditArticle');
 			$this->addHook('AdminArticleTop', 'AdminArticleTop');
 			$this->addHook('AdminArticlePreview', 'AdminArticlePreview');
+			$this->addHook('ThemeEndHead', 'ThemeEndHead');			
 		}
 
 	}
@@ -121,5 +121,16 @@ class plxEditor extends plxPlugin {
 		</script>
 		';
 	}
+	
+	/**
+	 * Méthode du hook ThemeEndHead
+	 *
+	 * @return	stdio
+	 * @author	Stephane F
+	 **/	
+	public function ThemeEndHead() {
+		echo '<style>.frame.youtube iframe { border:0; max-width: 560px; max-height: 315px; }</style>'."\n";
+	}
+
 }
 ?>

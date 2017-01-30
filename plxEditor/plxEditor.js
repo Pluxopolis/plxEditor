@@ -196,7 +196,7 @@ PLXEDITOR.editor=function() {
 				var match = url.match(regExp);
 				if (match) if (match.length >= 2) {
 					var videoId = match[2];
-					var s = '<div class="frame"><iframe style="border:0;max-width:560px" src="https://www.youtube.com/embed/'+videoId+'" width="560" height="315" allowfullscreen></iframe></youtube>';
+					var s = '<div class="frame youtube"><iframe src="https://www.youtube.com/embed/'+videoId+'" width="560" height="315" allowfullscreen></iframe></div>';
 					this.frame.document.execCommand('inserthtml', false, s);
 				}
 			}		
