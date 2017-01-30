@@ -368,7 +368,16 @@ PLXEDITOR.editor=function() {
 
 PLXEDITOR_fallback = function(cible, txt, replace) {
 	var editor = 'window.opener.' + cible.replace('id_', 'editor_');
-	eval(editor).execCommand('InsertImage', '../../'+txt.substring(txt.indexOf(PLXEDITOR_PATH_MEDIAS)));
+	txt = '../../'+txt.replace(PLUXML_ROOT, '');
+	var res = txt.match(/\.tb\.(jpe?g|gif|png)$/gi);
+	var ext = txt.substr(txt.lastIndexOf('.') + 1);
+	if(res) {
+		var f = txt.replace(res[0], '.'+ext);
+		var s = '<a href="'+f+'" title=""><img src="'+txt+'" alt="" /></a>'+"\n";
+		eval(editor).execCommand('inserthtml', s);
+	} else {
+		eval(editor).execCommand('InsertImage', txt);
+	}
 }
 
 PLXEDITOR.event=function() {

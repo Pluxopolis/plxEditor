@@ -3,6 +3,7 @@
 [+] Bouton Youtube
 [+] Bouton Code
 [+] Traduction occitane (contribution Quent-in)
+[+] Code html pour affichage image + miniature si selection miniature à partir du gestionnaire de medias (icone image toolbar)
 
 ## Version 1.5.1 (14/11/2016) ##
 [+] Configuration de l'utilisation de plxEditor avec les pages statiques

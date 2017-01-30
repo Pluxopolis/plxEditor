@@ -114,6 +114,7 @@ class plxEditor extends plxPlugin {
 		echo '<?php $medias = $plxAdmin->aConf["medias"].($plxAdmin->aConf["userfolders"] ? $_SESSION["user"]."/" : ""); ?>';
 		echo '
 		<script>
+			PLUXML_ROOT = "<?php echo $plxAdmin->racine ?>";		
 			PLXEDITOR_PATH_MEDIAS = "<?php echo $medias ?>";
 			PLXEDITOR_PATH_PLUGINS = "<?php echo PLX_PLUGINS ?>";
 			if(document.getElementById("id_chapo")) { editor_chapo = new PLXEDITOR.editor.create("editor_chapo", "id_chapo"); }
