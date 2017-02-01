@@ -43,6 +43,7 @@ table#popup td {
 	margin:0;
 	border:0;
 	background-color:#f2f2f2;
+	height: 0;
 }
 .wysiwyg-fullscreen {
 	position: fixed;
