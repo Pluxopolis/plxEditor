@@ -80,6 +80,13 @@ PLXEDITOR.editor=function() {
 		<option value="<p>">P</option>\
 		<option value="<pre>">Pre</option>\
 	</select>\
+	<select onchange="'+this.editor+'.execCommand(this.value);;this.selectedIndex=0;" data-tag="align">\
+		<option value="">Align</option>\
+		<option value="justifyleft">&#xe911 '+lang.L_TOOLBAR_P_LEFT+'</option>\
+		<option value="justifycenter">&#xe912 '+lang.L_TOOLBAR_P_CENTER+'</option>\
+		<option value="justifyright">&#xe913 '+lang.L_TOOLBAR_P_RIGHT+'</option>\
+		<option value="justifyFull">&#xe914 '+lang.L_TOOLBAR_P_JUSTIFY+'</option>\
+	</select>\
 	<span class="icon-pilcrow" onclick="'+this.editor+'.execCommand(\'inserthtml\', \'<br />\')" title="'+lang.L_TOOLBAR_BR+'"></span>\
 	<span class="icon-bold" onclick="'+this.editor+'.execCommand(\'bold\')" title="'+lang.L_TOOLBAR_BOLD+'"></span>\
 	<span class="icon-italic" onclick="'+this.editor+'.execCommand(\'italic\')" title="'+lang.L_TOOLBAR_ITALIC+'"></span>\
@@ -92,10 +99,6 @@ PLXEDITOR.editor=function() {
 	<span class="icon-quotes-right" onclick="'+this.editor+'.execCommand(\'formatBlock\', \'<blockquote>\')" title="'+lang.L_TOOLBAR_QUOTE+'"></span>\
 	<span class="icon-superscript" onclick="'+this.editor+'.execCommand(\'superscript\')" title="'+lang.L_TOOLBAR_SUPERSCRIPT+'"></span>\
 	<span class="icon-subscript" onclick="'+this.editor+'.execCommand(\'subscript\')" title="'+lang.L_TOOLBAR_SUBSCRIPT+'"></span>\
-	<span class="icon-paragraph-left" onclick="'+this.editor+'.execCommand(\'justifyleft\')" title="'+lang.L_TOOLBAR_P_LEFT+'"></span>\
-	<span class="icon-paragraph-center" onclick="'+this.editor+'.execCommand(\'justifycenter\')" title="'+lang.L_TOOLBAR_P_CENTER+'"></span>\
-	<span class="icon-paragraph-right" onclick="'+this.editor+'.execCommand(\'justifyright\')" title="'+lang.L_TOOLBAR_P_RIGHT+'"></span>\
-	<span class="icon-paragraph-justify" onclick="'+this.editor+'.execCommand(\'justifyFull\')" title="'+lang.L_TOOLBAR_P_JUSTIFY+'"></span>\
 	<span class="icon-images" onclick="mediasManager.openPopup(\''+this.editor+'\', false, \'PLXEDITOR_fallback\')" title="'+lang.L_TOOLBAR_MEDIAS+'"></span>\
 	<span class="icon-youtube" onclick="'+this.editor+'.execCommand(\'youtube\')" title="'+lang.L_TOOLBAR_YOUTUBE+'"></span>\
 	<span class="icon-terminal" onclick="'+this.editor+'.execCommand(\'code\')" title="'+lang.L_TOOLBAR_CODE+'"></span>\
