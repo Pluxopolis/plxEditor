@@ -1,4 +1,4 @@
-## Version 1.5.3 (xx/xx/2017) ##
+## Version 1.5.3 (01/02/2017) ##
 [+] Compatibilité css avec PluCSS 1.2
 [+] Align sous forme de iste déroulante
 
