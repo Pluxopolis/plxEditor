@@ -81,11 +81,11 @@ img {
 	border:none;
 }
 select[data-tag="align"]  { 
-	font-family: 'icomoon', Arial !important;
 	width: 75px;
 }
 select[data-tag="align"] option { 
-	font-size: 11px;
+	font-family: 'icomoon', Arial !important;
+	font-size: 12px;
 }
 /* Definition des icones */
 .plxeditor-toolbar select {
