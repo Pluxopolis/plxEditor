@@ -1,6 +1,6 @@
 ## Version 1.5.3 (01/02/2017) ##
 [+] Compatibilité css avec PluCSS 1.2
-[+] Align sous forme de iste déroulante
+[+] Align sous forme de liste déroulante
 
 ## Version 1.5.2 (27/01/2017) ##
 [+] Bouton Citation
