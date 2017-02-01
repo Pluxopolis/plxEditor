@@ -35,9 +35,6 @@
 .hide {
 	display: none;
 }
-table#popup {
-	font-size: 0.8rem;
-}
 table#popup td {
 	padding:2px 2px 2px 4px;
 	margin:0;
