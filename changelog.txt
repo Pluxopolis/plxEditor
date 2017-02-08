@@ -1,4 +1,4 @@
-## Version 1.5.4 (xx/xx/2017) ##
+## Version 1.5.4 beta 1 (08/02/2017) ##
 BUG Problème affichage des smileys
 BUG Mauvaise conversion des liens relatifs/absolus
 
