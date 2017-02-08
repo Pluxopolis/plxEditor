@@ -43,48 +43,45 @@ class plxEditor extends plxPlugin {
 	#----------
 
 	/**
-	 * Méthode qui convertit les liens absolus en liens relatifs
+	 * Méthode qui convertit les liens relatifs en liens absolus
 	 *
 	 * @return	stdio
 	 * @author	Stephane F
 	 **/
 	public function plxAdminEditArticle() {
-		echo "<?php \$content['chapo'] = str_replace(plxUtils::getRacine(), '', \$content['chapo']); ?>";
-		echo "<?php \$content['content'] = str_replace(plxUtils::getRacine(), '', \$content['content']); ?>";
+		echo '<?php $content["chapo"] = str_replace("../../".$this->aConf["medias"], $this->aConf["medias"], $content["chapo"]); ?>';
+		echo '<?php $content["content"] = str_replace("../../".$this->aConf["medias"], $this->aConf["medias"], $content["content"]); ?>';
+		echo '<?php $content["chapo"] = str_replace("../../".$this->aConf["racine_plugins"], $this->aConf["racine_plugins"], $content["chapo"]); ?>';
+		echo '<?php $content["content"] = str_replace("../../".$this->aConf["racine_plugins"], $this->aConf["racine_plugins"], $content["content"]); ?>';
+		echo '<?php $content["chapo"] = str_replace(plxUtils::getRacine(), "", $content["chapo"]); ?>';
+		echo '<?php $content["content"] = str_replace(plxUtils::getRacine(), "", $content["content"]); ?>';
 	}
-	/**
-	 * Méthode qui convertit les liens absolus en liens relatifs
-	 *
-	 * @return	stdio
-	 * @author	Stephane F
-	 **/
-	public function AdminArticlePreview() {
-		echo "<?php \$art['chapo'] = str_replace(plxUtils::getRacine(), '', \$art['chapo']); ?>";
-		echo "<?php \$art['content'] = str_replace(plxUtils::getRacine(), '', \$art['content']); ?>";
-	}
-
 	/**
 	 * Méthode qui convertit les liens relatifs en liens absolus
 	 *
 	 * @return	stdio
 	 * @author	Stephane F
 	 **/
-	public function AdminArticleTop() {
-		echo "<?php \$chapo = str_replace('../../'.\$plxAdmin->aConf['medias'], plxUtils::getRacine().\$plxAdmin->aConf['medias'], \$chapo); ?>";
-		echo "<?php \$content = str_replace('../../'.\$plxAdmin->aConf['medias'], plxUtils::getRacine().\$plxAdmin->aConf['medias'], \$content); ?>";
+	public function AdminArticlePreview() {
+		echo '<?php $art["chapo"] = str_replace("../../".$plxAdmin->aConf["medias"], $plxAdmin->aConf["medias"], $art["chapo"]); ?>';
+		echo '<?php $art["content"] = str_replace("../../".$plxAdmin->aConf["medias"], $plxAdmin->aConf["medias"], $art["content"]); ?>';
+		echo '<?php $art["chapo"] = str_replace("../../".$plxAdmin->aConf["racine_plugins"], $plxAdmin->aConf["racine_plugins"], $art["chapo"]); ?>';
+		echo '<?php $art["content"] = str_replace("../../".$plxAdmin->aConf["racine_plugins"], $plxAdmin->aConf["racine_plugins"], $art["content"]); ?>';
+		echo '<?php $art["chapo"] = str_replace(plxUtils::getRacine(), "", $art["chapo"]); ?>';
+		echo '<?php $art["content"] = str_replace(plxUtils::getRacine(), "", $art["content"]); ?>';
 	}
 
 	/**
-	 * Méthode appelée lors du préview d'un article
+	 * Méthode qui convertit les liens absolus en liens relatifs
 	 *
 	 * @return	stdio
 	 * @author	Stephane F
 	 **/
-	public function AdminArticlePrepend() {
-		if(!empty($_POST['preview'])) {
-			echo "<?php \$_POST['chapo'] = str_replace('../../'.\$plxAdmin->aConf['medias'], \$plxAdmin->aConf['medias'], \$_POST['chapo']); ?>";
-			echo "<?php \$_POST['content'] = str_replace('../../'.\$plxAdmin->aConf['medias'], \$plxAdmin->aConf['medias'], \$_POST['content']); ?>";
-		}
+	public function AdminArticleTop() {
+		echo '<?php $chapo = str_replace($plxAdmin->aConf["racine_plugins"], "../../".$plxAdmin->aConf["racine_plugins"], $chapo); ?>';
+		echo '<?php $content = str_replace($plxAdmin->aConf["racine_plugins"], "../../".$plxAdmin->aConf["racine_plugins"], $content); ?>';		
+		echo '<?php $chapo = str_replace($plxAdmin->aConf["medias"], "../../".$plxAdmin->aConf["medias"], $chapo); ?>';
+		echo '<?php $content = str_replace($plxAdmin->aConf["medias"], "../../".$plxAdmin->aConf["medias"], $content); ?>';
 	}
 
 	#----------
@@ -116,7 +113,7 @@ class plxEditor extends plxPlugin {
 		<script>
 			PLUXML_ROOT = "<?php echo $plxAdmin->racine ?>";		
 			PLXEDITOR_PATH_MEDIAS = "<?php echo $medias ?>";
-			PLXEDITOR_PATH_PLUGINS = "<?php echo PLX_PLUGINS ?>";
+			PLXEDITOR_PATH_PLUGINS = "<?php echo $plxAdmin->aConf["racine_plugins"] ?>";
 			if(document.getElementById("id_chapo")) { editor_chapo = new PLXEDITOR.editor.create("editor_chapo", "id_chapo"); }
 			if(document.getElementById("id_content")) { editor_content = new PLXEDITOR.editor.create("editor_content", "id_content"); }
 		</script>

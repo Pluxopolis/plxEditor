@@ -12,14 +12,15 @@ PLXEDITOR.editor=function() {
 
 	function create(editorName, textareaId){
 		this.path = {
-			editor : PLXEDITOR_PATH_PLUGINS+'plxEditor/',
-			images : PLXEDITOR_PATH_PLUGINS+'plxEditor/plxEditor/images/',
-			css	   : PLXEDITOR_PATH_PLUGINS+'plxEditor/plxEditor/css/',
+			editor : '../../'+PLXEDITOR_PATH_PLUGINS+'plxEditor/',
+			images : '../../'+PLXEDITOR_PATH_PLUGINS+'plxEditor/plxEditor/images/',
+			css	   : '../../'+PLXEDITOR_PATH_PLUGINS+'plxEditor/plxEditor/css/',
 		}
 		this.editor = editorName;
 		this.textareaId = textareaId;
 		// Chargement des données avec conversion des liens
-		this.textareaValue = this.convertLinks(E$(this.textareaId).value, 0);
+		//this.textareaValue = this.convertLinks(E$(this.textareaId).value, 0);
+		this.textareaValue = E$(this.textareaId).value;
 		//
 		this.viewSource = false;
 		this.viewFullscreen = false;
@@ -254,8 +255,10 @@ PLXEDITOR.editor=function() {
 		// conversion des liens
 		if(how==0) {
 			txt=txt.replace(new RegExp(PLXEDITOR_PATH_MEDIAS, 'g'), "../../"+PLXEDITOR_PATH_MEDIAS);
+			txt=txt.replace(new RegExp(PLXEDITOR_PATH_PLUGINS, 'g'), "../../"+PLXEDITOR_PATH_PLUGINS);			
 		} else {
 			txt=txt.replace(new RegExp("../../"+PLXEDITOR_PATH_MEDIAS, 'g'), PLXEDITOR_PATH_MEDIAS);
+			txt=txt.replace(new RegExp("../../"+PLXEDITOR_PATH_PLUGINS, 'g'), PLXEDITOR_PATH_PLUGINS);
 		}
 		return txt;
 	},
