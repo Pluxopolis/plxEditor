@@ -18,6 +18,8 @@ class plxEditor extends plxPlugin {
 
 		# Appel du constructeur de la classe plxPlugin (obligatoire)
 		parent::__construct($default_lang);
+		
+		$this->default_lang = $default_lang;
 
 		# droits pour accèder à la page config.php du plugin
 		$this->setConfigProfil(PROFIL_ADMIN);
@@ -93,8 +95,15 @@ class plxEditor extends plxPlugin {
 	 * @author	Stephane F
 	 **/
 	public function AdminTopEndHead() {
+		echo '<?php $plxAdmin->aConf["default_lang"] ?>';
 		echo '<link rel="stylesheet" type="text/css" href="'.$this->plugPath.'plxEditor/css/plxEditor.css" media="screen" />'."\n";
 		echo '<link rel="stylesheet" type="text/css" href="'.$this->plugPath.'plxEditor/css/viewsource.css" media="screen" />'."\n";
+		echo '<?php 
+			$js = "'.$this->plugPath.'plxEditor/lang/".$plxAdmin->aConf["default_lang"].".js";
+			if(!is_file($js)) $js = "'.$this->plugPath.'plxEditor/lang/fr.js";
+			echo "<script src=\"".$js."\"></script>\n"; 
+		?>';
+		echo '<?php $medias = $plxAdmin->aConf["medias"].($plxAdmin->aConf["userfolders"] ? $_SESSION["user"]."/" : ""); ?>';
 		echo '<script src="'.PLX_PLUGINS.'plxEditor/plxEditor/plxEditor.js"></script>'."\n";
 	}
 
@@ -105,10 +114,6 @@ class plxEditor extends plxPlugin {
 	 * @author	Stephane F
 	 **/
 	public function AdminFootEndBody() {
-		$langfile = $this->plugPath.'plxEditor/lang/'.$this->default_lang.'.js';
-		if(is_file($langfile))
-		echo '<script src="'.$langfile.'"></script>'."\n";
-		echo '<?php $medias = $plxAdmin->aConf["medias"].($plxAdmin->aConf["userfolders"] ? $_SESSION["user"]."/" : ""); ?>';
 		echo '
 		<script>
 			PLUXML_ROOT = "<?php echo $plxAdmin->racine ?>";		
