@@ -9,9 +9,9 @@ PLXEDITOR = {
 	editor : function() {
 
 		function create(selectorId, options){
-			this.selectorId = selectorId;
 			this.selector = E$(selectorId);
 			if(this.selector) {
+				this.selectorId = selectorId;
 				this.options = options;
 				this.init();
 			} else {
@@ -79,7 +79,7 @@ PLXEDITOR = {
 		create.prototype.getToolbarHTML=function() {
 			return '\
 				<div id="plxeditor-'+this.selectorId+'-subtoolbar" style="display:inline-block;margin:0;padding:0">\
-				<select id="plxtoolbar-'+this.selectorId+'-sel-style" data-tag="heading">\
+				<select id="'+this.selectorId+'-sel-style" data-tag="heading">\
 					<option value="">Style</option>\
 					<option value="h1">H1</option>\
 					<option value="h2">H2</option>\
@@ -90,7 +90,7 @@ PLXEDITOR = {
 					<option value="p">P</option>\
 					<option value="pre">Pre</option>\
 				</select>\
-				<select id="'+this.selectorId+'-sel align" data-tag="align">\
+				<select id="'+this.selectorId+'-sel-align" data-tag="align">\
 					<option value="">Align</option>\
 					<option value="Left">&#xe911 Left</option>\
 					<option value="Center">&#xe912 Center</option>\
