@@ -113,6 +113,7 @@
 .plxeditor-modal-content tr,
 .plxeditor-modal-content tr:hover {
 	background-color: #fff;
+	border: none;
 }
 .plxeditor-modal-content tr:last-child {
 	text-align: right;
@@ -167,10 +168,11 @@
 	padding: 0;
 	border: none;
 	background-color: transparent;
+	height: 0;
 }
 
 #plxeditor-cpicker tr {line-height:10px; background-color: transparent; }
-#plxeditor-cpicker a { display: inline-block; width: 10px; border:1px solid #555; }
+#plxeditor-cpicker a { display: inline-block; width: 10px; height: 10px; border:1px solid #555; }
 
 /*************************************/
 
@@ -199,14 +201,17 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-
+select[data-tag="heading"],
+select[data-tag="align"]  {
+	border: none;
+}
 select[data-tag="align"]  { 
 	font-family: 'icomoon', Arial !important;
-	width: 6.2rem;
+	width: 6.3rem;
 }
 select[data-tag="heading"] option,
 select[data-tag="align"] option { 
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 }
 
 .icon-adjust:before {
