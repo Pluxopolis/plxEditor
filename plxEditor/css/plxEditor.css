@@ -4,10 +4,9 @@
 }
 .plxeditor-toolbar  button {
 	background-color: #fff;
-	border: none;
-	padding: 3px;
+	border: 2px solid transparent;
+	padding: 2px;
 	outline: 0;
-	font-size: 1rem;
 	color: #555;
 }
 .plxeditor-toolbar  button:hover{
@@ -203,6 +202,11 @@
 
 select[data-tag="align"]  { 
 	font-family: 'icomoon', Arial !important;
+	width: 6.2rem;
+}
+select[data-tag="heading"] option,
+select[data-tag="align"] option { 
+	font-size: 1.1rem;
 }
 
 .icon-adjust:before {
