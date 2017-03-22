@@ -221,7 +221,7 @@ PLXEDITOR.editor=function() {
 	},
 	create.prototype.getFrameHtml=function() {
 		var html = "";
-		var html = "<!DOCTYPE html>";
+		html += '<!DOCTYPE html>';
 		html += '<html><head>';
 		html += '<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">';
 		html += '<style type="text/css">pre { background-color: #fff; padding: 0.75em 1.5em; border: 1px solid #dddddd;* }</style>';
@@ -311,6 +311,7 @@ PLXEDITOR.editor=function() {
 		}
 	},
 	create.prototype.toXHTML=function(v) {
+		return v;
 		function lc(str){return str.toLowerCase()}
 		function sa(str){return str.replace(/("|;)\s*[A-Z-]+\s*:/g,lc);}
 		v=v.replace(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\)/gi, function toHex($1,$2,$3,$4) { return '#' + (1 << 24 | $2 << 16 | $3 << 8 | $4).toString(16).substr(1); });
@@ -319,7 +320,7 @@ PLXEDITOR.editor=function() {
 		v=v.replace(/s*class="webkit-indent-blockquote"/gi,'');
 		v=v.replace(/<span style="">/gi,'');
 		v=v.replace(/s*style="font-size: (.*?);"/gi,'');
-    v=v.replace(/<span\b[^>]*>(.*?)<\/span[^>]*>/gi,'$1');
+		//	v=v.replace(/<span\b[^>]*>(.*?)<\/span[^>]*>/gi,'$1');
 		v=v.replace(/<b\b[^>]*>(.*?)<\/b[^>]*>/gi,'<strong>$1</strong>');
 		v=v.replace(/<i\b[^>]*>(.*?)<\/i[^>]*>/gi,'<em>$1</em>');
 		v=v.replace(/<(s|strike)\b[^>]*>(.*?)<\/(s|strike)[^>]*>/gi,'<span style="text-decoration: line-through;">$2</span>');
