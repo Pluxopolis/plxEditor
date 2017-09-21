@@ -311,7 +311,6 @@ PLXEDITOR.editor=function() {
 		}
 	},
 	create.prototype.toXHTML=function(v) {
-		return v;
 		function lc(str){return str.toLowerCase()}
 		function sa(str){return str.replace(/("|;)\s*[A-Z-]+\s*:/g,lc);}
 		v=v.replace(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\)/gi, function toHex($1,$2,$3,$4) { return '#' + (1 << 24 | $2 << 16 | $3 << 8 | $4).toString(16).substr(1); });
