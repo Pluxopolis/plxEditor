@@ -220,8 +220,7 @@ PLXEDITOR.editor=function() {
 		try { this.frame.document.body.innerHTML = this.textareaValue; } catch (e) { setTimeout(this.setFrameContent, 10); }
 	},
 	create.prototype.getFrameHtml=function() {
-		var html = "";
-		html += '<!DOCTYPE html>';
+		var html = '<!DOCTYPE html>';
 		html += '<html><head>';
 		html += '<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">';
 		html += '<style type="text/css">pre { background-color: #fff; padding: 0.75em 1.5em; border: 1px solid #dddddd;* }</style>';
@@ -455,7 +454,7 @@ PLXEDITOR.linker=function() {
 	create.prototype.showPanel=function(){
 		var elemDiv = document.createElement('div');
 		elemDiv.id = 'linker';
-	    elemDiv.style.position = 'absolute';
+		elemDiv.style.position = 'absolute';
 		elemDiv.style.display = 'block';
 		elemDiv.style.border = '#aaa 1px solid';
 		elemDiv.style.zIndex = "2";
@@ -516,7 +515,7 @@ PLXEDITOR.cpicker=function(){
 	create.prototype.displayPanel=function(){
 		var elemDiv = document.createElement('div');
 		elemDiv.id = 'colorpicker';
-	    elemDiv.style.position = 'absolute';
+		elemDiv.style.position = 'absolute';
 		elemDiv.style.display = 'block';
 		elemDiv.style.zIndex = "2";
 		var top = PLXEDITOR.dialog.getAbsoluteOffsetTop(E$(this.button)) + 20;
@@ -559,7 +558,7 @@ PLXEDITOR.smilies=function(){
 	create.prototype.displayPanel=function(){
 		var elemDiv = document.createElement('div');
 		elemDiv.id = 'smilies';
-	    elemDiv.style.position = 'absolute';
+		elemDiv.style.position = 'absolute';
 		elemDiv.style.display = 'block';
 		elemDiv.style.border = '#aaa 1px solid';
 		elemDiv.style.zIndex = "2";
