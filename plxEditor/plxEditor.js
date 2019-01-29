@@ -88,27 +88,27 @@ PLXEDITOR.editor=function() {
 		<option value="justifyright">&#xe913 '+lang.L_TOOLBAR_P_RIGHT+'</option>\
 		<option value="justifyFull">&#xe914 '+lang.L_TOOLBAR_P_JUSTIFY+'</option>\
 	</select>\
-	<span class="icon-pilcrow" onclick="'+this.editor+'.execCommand(\'inserthtml\', \'<br />\')" title="'+lang.L_TOOLBAR_BR+'"></span>\
-	<span class="icon-bold" onclick="'+this.editor+'.execCommand(\'bold\')" title="'+lang.L_TOOLBAR_BOLD+'"></span>\
-	<span class="icon-italic" onclick="'+this.editor+'.execCommand(\'italic\')" title="'+lang.L_TOOLBAR_ITALIC+'"></span>\
-	<span class="icon-underline" onclick="'+this.editor+'.execCommand(\'underline\')" title="'+lang.L_TOOLBAR_UNDERLINE+'"></span>\
-	<span class="icon-strikethrough" onclick="'+this.editor+'.execCommand(\'strikethrough\')" title="'+lang.L_TOOLBAR_STRIKE+'"></span>\
-	<span id="'+this.textareaId+'-linker" class="icon-link" onclick="'+this.editor+'.execCommand(\'link\')" title="'+lang.L_TOOLBAR_LINK+'"></span>\
-	<span class="icon-pagebreak" onclick="'+this.editor+'.execCommand(\'inserthtml\', \'<hr />\')" title="'+lang.L_TOOLBAR_HR+'"></span>\
-	<span class="icon-list-numbered" onclick="'+this.editor+'.execCommand(\'insertorderedlist\')" title="'+lang.L_TOOLBAR_OL+'"></span>\
-	<span class="icon-list2" onclick="'+this.editor+'.execCommand(\'insertunorderedlist\')" title="'+lang.L_TOOLBAR_UL+'"></span>\
-	<span class="icon-quotes-right" onclick="'+this.editor+'.execCommand(\'formatBlock\', \'<blockquote>\')" title="'+lang.L_TOOLBAR_QUOTE+'"></span>\
-	<span class="icon-superscript" onclick="'+this.editor+'.execCommand(\'superscript\')" title="'+lang.L_TOOLBAR_SUPERSCRIPT+'"></span>\
-	<span class="icon-subscript" onclick="'+this.editor+'.execCommand(\'subscript\')" title="'+lang.L_TOOLBAR_SUBSCRIPT+'"></span>\
-	<span class="icon-images" onclick="mediasManager.openPopup(\''+this.editor+'\', false, \'PLXEDITOR_fallback\')" title="'+lang.L_TOOLBAR_MEDIAS+'"></span>\
-	<span class="icon-youtube" onclick="'+this.editor+'.execCommand(\'youtube\')" title="'+lang.L_TOOLBAR_YOUTUBE+'"></span>\
-	<span class="icon-terminal" onclick="'+this.editor+'.execCommand(\'code\')" title="'+lang.L_TOOLBAR_CODE+'"></span>\
-	<span id="'+this.textareaId+'-smilies" class="icon-happy" onclick="'+this.editor+'.execCommand(\'smilies\')" title="'+lang.L_TOOLBAR_SMILIES+'"></span>\
-	<span id="'+this.textareaId+'-forecolor" class="icon-adjust" onclick="'+this.editor+'.execCommand(\'forecolor\')" title="'+lang.L_TOOLBAR_FORECOLOR+'"></span>\
-	<span id="'+this.textareaId+'-backcolor" class="icon-tint" onclick="'+this.editor+'.execCommand(\'backcolor\')" title="'+lang.L_TOOLBAR_BACKCOLOR+'"></span>\
+	<span class="tb-icon-pilcrow" onclick="'+this.editor+'.execCommand(\'inserthtml\', \'<br />\')" title="'+lang.L_TOOLBAR_BR+'"></span>\
+	<span class="tb-icon-bold" onclick="'+this.editor+'.execCommand(\'bold\')" title="'+lang.L_TOOLBAR_BOLD+'"></span>\
+	<span class="tb-icon-italic" onclick="'+this.editor+'.execCommand(\'italic\')" title="'+lang.L_TOOLBAR_ITALIC+'"></span>\
+	<span class="tb-icon-underline" onclick="'+this.editor+'.execCommand(\'underline\')" title="'+lang.L_TOOLBAR_UNDERLINE+'"></span>\
+	<span class="tb-icon-strikethrough" onclick="'+this.editor+'.execCommand(\'strikethrough\')" title="'+lang.L_TOOLBAR_STRIKE+'"></span>\
+	<span id="'+this.textareaId+'-linker" class="tb-icon-link" onclick="'+this.editor+'.execCommand(\'link\')" title="'+lang.L_TOOLBAR_LINK+'"></span>\
+	<span class="tb-icon-pagebreak" onclick="'+this.editor+'.execCommand(\'inserthtml\', \'<hr />\')" title="'+lang.L_TOOLBAR_HR+'"></span>\
+	<span class="tb-icon-list-numbered" onclick="'+this.editor+'.execCommand(\'insertorderedlist\')" title="'+lang.L_TOOLBAR_OL+'"></span>\
+	<span class="tb-icon-list2" onclick="'+this.editor+'.execCommand(\'insertunorderedlist\')" title="'+lang.L_TOOLBAR_UL+'"></span>\
+	<span class="tb-icon-quotes-right" onclick="'+this.editor+'.execCommand(\'formatBlock\', \'<blockquote>\')" title="'+lang.L_TOOLBAR_QUOTE+'"></span>\
+	<span class="tb-icon-superscript" onclick="'+this.editor+'.execCommand(\'superscript\')" title="'+lang.L_TOOLBAR_SUPERSCRIPT+'"></span>\
+	<span class="tb-icon-subscript" onclick="'+this.editor+'.execCommand(\'subscript\')" title="'+lang.L_TOOLBAR_SUBSCRIPT+'"></span>\
+	<span class="tb-icon-images" onclick="mediasManager.openPopup(\''+this.editor+'\', false, \'PLXEDITOR_fallback\')" title="'+lang.L_TOOLBAR_MEDIAS+'"></span>\
+	<span class="tb-icon-youtube" onclick="'+this.editor+'.execCommand(\'youtube\')" title="'+lang.L_TOOLBAR_YOUTUBE+'"></span>\
+	<span class="tb-icon-terminal" onclick="'+this.editor+'.execCommand(\'code\')" title="'+lang.L_TOOLBAR_CODE+'"></span>\
+	<span id="'+this.textareaId+'-smilies" class="tb-icon-happy" onclick="'+this.editor+'.execCommand(\'smilies\')" title="'+lang.L_TOOLBAR_SMILIES+'"></span>\
+	<span id="'+this.textareaId+'-forecolor" class="tb-icon-adjust" onclick="'+this.editor+'.execCommand(\'forecolor\')" title="'+lang.L_TOOLBAR_FORECOLOR+'"></span>\
+	<span id="'+this.textareaId+'-backcolor" class="tb-icon-tint" onclick="'+this.editor+'.execCommand(\'backcolor\')" title="'+lang.L_TOOLBAR_BACKCOLOR+'"></span>\
 	</div>\
-	<span id="'+this.textareaId+'-html" class="icon-embed2" onclick="'+this.editor+'.execCommand(\'html\')" title="'+lang.L_TOOLBAR_HTML+'"></span>\
-	<span id="'+this.textareaId+'-fullscreen" class="icon-expand" onclick="'+this.editor+'.execCommand(\'fullscreen\')" title="'+lang.L_TOOLBAR_FULLSCREEN+'"></span>\
+	<span id="'+this.textareaId+'-html" class="tb-icon-embed2" onclick="'+this.editor+'.execCommand(\'html\')" title="'+lang.L_TOOLBAR_HTML+'"></span>\
+	<span id="'+this.textareaId+'-fullscreen" class="tb-icon-expand" onclick="'+this.editor+'.execCommand(\'fullscreen\')" title="'+lang.L_TOOLBAR_FULLSCREEN+'"></span>\
 	';
 
 		var html = '';
@@ -232,12 +232,12 @@ PLXEDITOR.editor=function() {
 	create.prototype.toggleFullscreen = function() {
 		if (!this.viewFullscreen) {
 			E$(this.textareaId+'-wysiwyg').setAttribute('class', 'wysiwyg-fullscreen');
-			E$(this.textareaId+'-fullscreen').setAttribute('class', 'icon-compress');
+			E$(this.textareaId+'-fullscreen').setAttribute('class', 'tb-icon-compress');
 			this.viewFullscreen = true;
 			E$("form_article").style.height = "0";
 		} else {
 			E$(this.textareaId+'-wysiwyg').setAttribute('class', 'wysiwyg');
-			E$(this.textareaId+'-fullscreen').setAttribute('class', 'icon-expand');
+			E$(this.textareaId+'-fullscreen').setAttribute('class', 'tb-icon-expand');
 			this.viewFullscreen = false;
 			E$("form_article").style.height = "100%";
 		}
@@ -274,7 +274,7 @@ PLXEDITOR.editor=function() {
 			txt = this.formatHTML(txt);
 			this.frame.document.body.innerHTML = txt.toString();
 			// change icon image
-			E$(this.textareaId+'-html').setAttribute('class', 'icon-embed');
+			E$(this.textareaId+'-html').setAttribute('class', 'tb-icon-embed');
 			// set color css file
 			var filecss=this.frame.document.createElement("link");
 			filecss.rel = 'stylesheet'
@@ -302,7 +302,7 @@ PLXEDITOR.editor=function() {
 				this.frame.document.body.innerHTML = txt;
 			}
 			// change icon image
-			E$(this.textareaId+'-html').setAttribute('class', 'icon-embed2');
+			E$(this.textareaId+'-html').setAttribute('class', 'tb-icon-embed2');
 			// set the font values for displaying HTML source
 			this.frame.document.body.style.fontSize = "";
 			this.frame.document.body.style.fontFamily = "";

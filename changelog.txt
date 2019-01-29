@@ -1,3 +1,6 @@
+﻿## Version 1.6 (29/01/2019) ##
+FIX: pas d'affichage des icones de la barre d'outils
+
 ## Version 1.5.4 (22/03/2017) ##
 BUG Problème affichage des smileys
 BUG Mauvaise prise en compte de langue dans la traduction de l'éditeur
