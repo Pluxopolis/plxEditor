@@ -1,4 +1,8 @@
-﻿## Version 1.6 (29/01/2019) ##
+﻿## Version 1.7 (2021/01/07) ##
+[+] Display align icons directly outside the list
+FIX <br> added to emptu article chapo
+
+## Version 1.6 (29/01/2019) ##
 FIX: pas d'affichage des icones de la barre d'outils
 
 ## Version 1.5.4 (22/03/2017) ##

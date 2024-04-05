@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
 	<title><![CDATA[plxEditor]]></title>
-	<author><![CDATA[Stéphane F.]]></author>
-	<version>1.6</version>
-	<date>29/01/2019</date>
-	<site>http://pluxopolis.net</site>
-	<description><![CDATA[plxEditor wysiwyg editor]]></description>
+	<author><![CDATA[Pluxopolis]]></author>
+	<version>1.8</version>
+	<date>04/04/2024</date>
+	<site>https://github.com/Pluxopolis/plxEditor</site>
+	<description><![CDATA[plxEditor is a wysiwyg editor for PluXml]]></description>
 	<requirements></requirements>
+	<scope>admin</scope>
 </document>
